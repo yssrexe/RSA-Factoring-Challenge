@@ -1,0 +1,10 @@
+#!/usr/bin/python3
+import sys
+
+open_file = sys.argv[1]
+i = 2
+with open(open_file, "r") as f:
+    for l in f:
+        P = int(l)
+        if P % i == 0: 
+            print("{}={}*{}".format(P, P//2, i))
