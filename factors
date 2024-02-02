@@ -13,7 +13,7 @@ with open(open_file, "r") as f:
         if P % i == 0: 
             print("{}={}*{}".format(P, P//2, i))
         elif check_sqrt(result):
-            print("{}={}*{}".format(P, result, result))
+            print("{}={}*{}".format(P, int(result), int(result)))
         else:
             num = mission(P)
             print("{}={}*{}".format(P, P//num, num))
