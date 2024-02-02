@@ -1,15 +1,19 @@
 #!/usr/bin/python3
 import sys
+import math
 from Polland import mission
+from Polland import check_sqrt
 
 open_file = sys.argv[1]
 i = 2
 with open(open_file, "r") as f:
     for l in f:
         P = int(l)
+        result = math.sqrt(P)
         if P % i == 0: 
             print("{}={}*{}".format(P, P//2, i))
+        elif check_sqrt(result):
+            print("{}={}*{}".format(P, result, result))
         else:
             num = mission(P)
             print("{}={}*{}".format(P, P//num, num))
-            
