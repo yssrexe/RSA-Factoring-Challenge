@@ -12,7 +12,7 @@ with open(open_file, "r") as f:
         result = math.sqrt(P)
         if P % i == 0: 
             print("{}={}*{}".format(P, P//2, i))
-        elif check_sqrt(result):
+        elif check_sqrt(result) and len(str(P)) == 2:
             print("{}={}*{}".format(P, int(result), int(result)))
         else:
             num = mission(P)
