@@ -4,3 +4,6 @@ def mission(N):
     for i in range(3, 10):
         if last_num % i == 0:
             return i
+
+def check_sqrt(value):
+    return isinstance(value, (int, float))
