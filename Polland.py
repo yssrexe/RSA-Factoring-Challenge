@@ -1,9 +1,14 @@
-#!/usr/bin/python3
-def mission(N):
-    last_num = N % 10
-    for i in range(3, 10):
-        if last_num % i == 0:
-            return i
+import math
 
-def check_sqrt(value):
-    return isinstance(value, (int, float))
+
+def polynomial(x, n):
+    return (x**2 - 1) % n
+
+def algorithm(n):
+    d = 1
+    x = y = 2
+    while d == 1:
+        x = int(polynomial(x, n))
+        y = int(polynomial(polynomial(y, n), n))
+        d = math.gcd(int(abs(x - y)), n)
+    return d
