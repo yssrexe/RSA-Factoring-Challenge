@@ -1,16 +1,19 @@
 #!/usr/bin/python3
 import sys
-import Polland as p
-import Stan as s
+import math
+from Polland import mission
+from Polland import check_sqrt
 
-file_name = sys.argv[1]
-with open(file_name, 'r') as f:
+open_file = sys.argv[1]
+i = 2
+with open(open_file, "r") as f:
     for l in f:
-        N = int(l.strip())
-        if N % 2 == 0:
-            print("{}={}*{}".format(N, N//2, 2))
+        P = int(l)
+        result = math.sqrt(P)
+        if P % i == 0: 
+            print("{}={}*{}".format(P, P//2, i))
+        elif check_sqrt(result) == 1 and len(str(P)) == 2:
+            print("{}={}*{}".format(P, int(result), int(result)))
         else:
-            d = p.algorithm(N)
-            if d == N:
-                d = s.algorithm(N)
-            print("{}={}*{}".format(N, N//d, d))
+            num = mission(P)
+            print("{}={}*{}".format(P, P//num, num))
