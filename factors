@@ -1,8 +1,5 @@
 #!/usr/bin/python3
 import sys
-import math
-from Polland import mission
-from Polland import check_sqrt
 from Polland import factorize
 
 open_file = sys.argv[1]
