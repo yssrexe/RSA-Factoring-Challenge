@@ -12,3 +12,9 @@ def check_sqrt(value):
         return 1
     else:
         return 0
+
+def factorize(number):
+    for i in range(2, int(number**0.5) + 1):
+        if number % i == 0:
+            return i, number // i
+    return None, None
