@@ -1,0 +1,11 @@
+#!/usr/bin/python3
+import sys
+from Polland import factorize
+
+open_file = sys.argv[1]
+i = 2
+with open(open_file, "r") as f:
+    for l in f:
+        P = int(l)
+        factor1, factor2 = factorize(P)
+        print("{}={}*{}".format(P, factor2, factor1))
